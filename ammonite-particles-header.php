@@ -22,7 +22,7 @@ if ( !class_exists( 'Ammonite_Particles_Header' ) ) {
     public static function register_styles_and_scripts() {
       add_action( 'wp_enqueue_scripts', function() {
         // Remove jQuery dependency if unnecessary
-        wp_register_script( 'ammonite-particles-header-script', plugins_url('assets/js/ammonite-particles-header.js', __FILE__ ), array('jquery'), '1.0.0', true );
+        wp_register_script( 'ammonite-particles-header-script', plugins_url('assets/js/ammonite-particles-header.js', __FILE__ ), array(), '1.0.0', true );
         wp_register_style( 'ammonite-particles-header-styles', plugins_url('assets/css/ammonite-particles-header.css', __FILE__ ), array(), '1.0.0', 'all' );
       } );
     }
@@ -36,6 +36,13 @@ if ( !class_exists( 'Ammonite_Particles_Header' ) ) {
         // Enqueue styles and scripts wherever shortcode is called
         wp_enqueue_script( 'ammonite-particles-header-script' );
         wp_enqueue_style( 'ammonite-particles-header-styles' );
+
+        // Localize data to script
+        wp_localize_script( 'ammonite-particles-header-script', 'ammoniteParticlesHeaderLoacalizedData',
+          array(
+            'pathToJSONConfig' => plugins_url('assets/js/ammonite-particles-header-config.json', __FILE__ )
+          )
+        );
 
         // Return template
         ob_start();
