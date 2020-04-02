@@ -40,7 +40,8 @@ if ( !class_exists( 'Ammonite_Particles_Header' ) ) {
         // Localize data to script
         wp_localize_script( 'ammonite-particles-header-script', 'ammoniteParticlesHeaderLoacalizedData',
           array(
-            'pathToJSONConfig' => plugins_url('assets/js/ammonite-particles-header-config.json', __FILE__ )
+            'pathToDesktopJSONConfig' => plugins_url('assets/js/ammonite-particles-header-desktop-config.json', __FILE__ ),
+            'pathToMobileJSONConfig' => plugins_url('assets/js/ammonite-particles-header-mobile-config.json', __FILE__ )
           )
         );
 

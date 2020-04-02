@@ -2,7 +2,16 @@
 /* LOAD PARTICLES.JS AND CONNECT TO JSON CONFIG WITH LOCALIZED PATH
 /* ----------------------------------------------- */
 window.addEventListener( 'DOMContentLoaded', function() {
-  particlesJS.load('particles-js', ammoniteParticlesHeaderLoacalizedData.pathToJSONConfig, function() {
+  // Load different configurations for desktop and mobile
+  let pathToJSONConfig;
+  if ( window.screen.width > 767 ) {
+    pathToJSONConfig = ammoniteParticlesHeaderLoacalizedData.pathToDesktopJSONConfig;
+  } else {
+    pathToJSONConfig = ammoniteParticlesHeaderLoacalizedData.pathToMobileJSONConfig;
+  }
+
+  // Call particles.js load on canvas
+  particlesJS.load('particles-js', pathToJSONConfig, function() {
     console.log('callback - particles.js config loaded');
   });
 } );
