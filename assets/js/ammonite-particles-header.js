@@ -2,11 +2,11 @@
 /* LOAD PARTICLES.JS AND CONNECT TO JSON CONFIG WITH LOCALIZED PATH
 /* ----------------------------------------------- */
 window.addEventListener( 'DOMContentLoaded', function() {
-  console.log('script loaded');
   particlesJS.load('particles-js', ammoniteParticlesHeaderLoacalizedData.pathToJSONConfig, function() {
     console.log('callback - particles.js config loaded');
   });
 } );
+
 
 /* -----------------------------------------------
 /* MINIFIED PARTICLES.JS BELOW

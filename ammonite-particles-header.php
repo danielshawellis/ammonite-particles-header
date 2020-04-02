@@ -28,7 +28,7 @@ if ( !class_exists( 'Ammonite_Particles_Header' ) ) {
     }
 
     public static function add_shortcode() {
-      // Use [ammonite_particles_header] to call this shortcode
+      // Use [ammonite_particles_header header_text=""] to call this shortcode
       add_shortcode( 'ammonite_particles_header', function( $atts ) {
         // Handle shortcode attributes
         $atts = shortcode_atts( array( 'header_text' => '' ), $atts );
